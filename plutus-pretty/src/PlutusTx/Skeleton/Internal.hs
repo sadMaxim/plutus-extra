@@ -55,7 +55,7 @@ import Plutus.V1.Ledger.Scripts (
   ValidatorHash (ValidatorHash),
  )
 import Plutus.V1.Ledger.Time (POSIXTime (POSIXTime))
-import Plutus.V1.Ledger.TxId (TxId (TxId))
+--import Plutus.V1.Ledger.TxId (TxId (TxId))
 import Plutus.V1.Ledger.Value (
   AssetClass (AssetClass),
   CurrencySymbol (CurrencySymbol),
@@ -202,9 +202,9 @@ instance (Skeletal a, Skeletal b) => Skeletal (a, b) where
   skeletize (x, y) = TupleS (skeletize x) (skeletize y) Nothing
 
 -- | @since 2.1
-instance Skeletal TxId where
-  {-# INLINEABLE skeletize #-}
-  skeletize (TxId bbs) = ConS "TxId" [skeletize bbs]
+--instance Skeletal TxId where
+--  {-# INLINEABLE skeletize #-}
+--  skeletize (TxId bbs) = ConS "TxId" [skeletize bbs]
 
 -- | @since 2.1
 instance Skeletal TxOutRef where
